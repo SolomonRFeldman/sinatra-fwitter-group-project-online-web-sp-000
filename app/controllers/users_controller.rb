@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   get '/signup' do
     if Helpers.is_logged_in?(session)
-      redirect '/tweets'
+      redirect to '/tweets'
     end
     erb :"/users/signup"
   end
