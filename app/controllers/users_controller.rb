@@ -5,7 +5,9 @@ class UsersController < ApplicationController
   end
   
   post '/users' do
-    if params.any?
+    if params.any? { |param| params[param] == "" }
+      redirect '/signup'
+    end
     @user = User.create(params[:user])
     session[:user_id] = @user.id
     redirect "/tweets"
