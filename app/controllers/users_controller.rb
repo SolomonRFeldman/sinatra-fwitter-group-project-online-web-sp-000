@@ -35,7 +35,7 @@ class UsersController < ApplicationController
   
   get '/logout' do
     if Helpers.is_logged_in?(session)
-      redirect to '/tweets'
+      erb :'/users/logout'
     end
     
 end
