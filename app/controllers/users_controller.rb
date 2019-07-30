@@ -28,6 +28,7 @@ class UsersController < ApplicationController
     if user && user.authenticate(params[:password])
       binding.pry
       session[:user_id] = user.id
+      binding.pry
       redirect '/tweets'
     else
       redirect '/login'
