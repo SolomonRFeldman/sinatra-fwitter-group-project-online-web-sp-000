@@ -46,5 +46,8 @@ class TweetsController < ApplicationController
     end
   end
   
+  patch '/tweets/:id' do
+    Tweet.find(id: params[:id])
+  
   
 end
