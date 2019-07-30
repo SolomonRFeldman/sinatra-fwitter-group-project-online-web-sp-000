@@ -6,5 +6,6 @@ class UsersController < ApplicationController
   
   post '/users' do
     User.create(params)
-
+    
+    
 end
