@@ -24,6 +24,7 @@ class TweetsController < ApplicationController
       @user = User.find(session[:user_id])
       @user.tweets << Tweet.new(params)
       @user.save
+      binding.pry
       redirect '/tweets'
     end
   end
