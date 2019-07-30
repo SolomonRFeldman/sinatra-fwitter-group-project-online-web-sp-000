@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   get '/signup' do
+    binding.pry
     if Helpers.is_logged_in?(session)
       redirect to '/tweets'
     end
