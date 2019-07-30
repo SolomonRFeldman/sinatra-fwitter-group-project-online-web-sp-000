@@ -48,7 +48,14 @@ class TweetsController < ApplicationController
   
   patch '/tweets/:id' do
     @tweet = Tweet.find(id: params[:id])
-    
+    @tweet.update(content: params[:content])
+    redirect "/tweets/#{params[:id]}"
+  end
+  
+  delete '/tweets/:id' do
+    Tweet.find(id: params[:id]).destroy
+    redirect '/users/'
+  end
   
   
 end
