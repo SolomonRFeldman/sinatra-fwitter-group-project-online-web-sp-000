@@ -29,6 +29,7 @@ class TweetsController < ApplicationController
   end
   
   get '/tweets/:id' do
+    binding.pry
     if Helpers.is_logged_in?(session)
       @tweet = Tweet.find(params)
       binding.pry
