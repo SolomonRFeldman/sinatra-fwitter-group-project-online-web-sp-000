@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   get '/signup' do
-    if is
+    if Helper
     erb :"/users/signup"
   end
   
