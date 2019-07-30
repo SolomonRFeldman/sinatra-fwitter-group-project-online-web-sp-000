@@ -39,7 +39,7 @@ class TweetsController < ApplicationController
   
   get '/tweets/:id/edit' do
     binding.pry
-    @tweet = Tweet.find(id: params[:id][:id])
+    @tweet = Tweet.find(params[:id])
     if @tweet.user.id == session[:user_id]
       erb :'/tweets/edit'
     else
@@ -48,13 +48,13 @@ class TweetsController < ApplicationController
   end
   
   patch '/tweets/:id' do
-    @tweet = Tweet.find(id: params[:id])
+    @tweet = Tweet.find(params[:id])
     @tweet.update(content: params[:content])
-    redirect "/tweets/#{params[:id]}"
+    redirect "/tweets/#{@tweet.id}"
   end
   
   delete '/tweets/:id' do
-    Tweet.find(id: params[:id]).destroy
+    Tweet.find(params[:id]).destroy
     redirect '/tweets'
   end
   
