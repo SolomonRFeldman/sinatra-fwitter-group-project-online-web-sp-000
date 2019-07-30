@@ -35,4 +35,10 @@ class TweetsController < ApplicationController
     else
       redirect '/login'
     end
+  end
+  
+  patch '/tweets/:id' do
+    erb :'/tweets/edit'
+  end
+  
 end
