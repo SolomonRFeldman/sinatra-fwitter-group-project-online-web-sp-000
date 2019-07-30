@@ -11,7 +11,7 @@ class TweetsController < ApplicationController
   
   get '/tweets/new' do
     if Helpers.is_logged_in?(session)
-      erb :'/tweets/index'
+      erb :'/tweets/new'
     else
       redirect '/login'
     end
