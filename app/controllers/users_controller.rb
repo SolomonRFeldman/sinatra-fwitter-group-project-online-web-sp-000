@@ -5,13 +5,12 @@ class UsersController < ApplicationController
   end
   
   post '/users' do
-    if params[:user].any? { |param| 
-      param[1] == "" }
-      redirect '/signup'
+    if params[:user].any? { |param| param[1] == "" }
+      redirect to '/signup'
     end
     @user = User.create(params[:user])
     session[:user_id] = @user.id
-    redirect "/tweets"
+    redirect to '/tweets'
   end
     
 end
