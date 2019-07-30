@@ -1,6 +1,7 @@
 <% if Helpers.is_logged_in?(session) %>
 <%= @error %>
   <form action='/tweets/<%= @tweet.id %>' method="post">
+    <input type="hidden" value="patch" name="_method">
     Content:
     <input type="text" name="content" value="<%= @tweet.content %>"><br>
     Edit Your Tweet:
