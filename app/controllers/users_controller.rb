@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     erb :"/users/signup"
   end
   
-  post '/users' do
+  post '/signup' do
     if params[:user].any? { |param| param[1] == "" }
       redirect to '/signup'
     end
