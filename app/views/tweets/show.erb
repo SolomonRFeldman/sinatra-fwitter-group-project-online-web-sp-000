@@ -1,5 +1,12 @@
 <h2><%= @tweet.user.username %> says: </h2>
 <p><%= @tweet.content %>
   <% if @tweet.user.id == session[:user_id] %>
-  
+  <form method="post" action="/tweets/<%= @tweet.id %>">
+  <input type="hidden" value="patch" name="_method">
+  <input type="submit" value="Edit">
+  </form>
+  <form method="post" action="/tweets/<%= @tweet.id %>">
+  <input type="hidden" value="delete" name="_method">
+  <input type="submit" value="Delete">
+  </form>
 </p>
