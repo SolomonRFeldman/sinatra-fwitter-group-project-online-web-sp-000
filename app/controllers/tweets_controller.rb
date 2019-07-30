@@ -37,8 +37,13 @@ class TweetsController < ApplicationController
     end
   end
   
-  patch '/tweets/:id' do
-    erb :'/tweets/edit'
+  get '/tweets/:id/edit' do
+    if Tweet.find(id: params[:id]).user.id == session[:user_id]
+      erb :'/tweets/edit'
+    else
+      redirect '/login'
+    end
   end
+  
   
 end
