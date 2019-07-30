@@ -23,7 +23,7 @@ class TweetsController < ApplicationController
     else
       binding.pry
       @user = User.find(session[:user_id])
-      @user.tweets << Tweet.create(params)
+      @user.tweets << Tweet.create(content: params[:content])
       @user.save
       binding.pry
       redirect '/tweets'
