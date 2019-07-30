@@ -21,11 +21,9 @@ class TweetsController < ApplicationController
     if params[:content] == ""
       redirect '/tweets/new'
     else
-      binding.pry
       @user = User.find(session[:user_id])
       @user.tweets << Tweet.create(content: params[:content])
       @user.save
-      binding.pry
       redirect '/tweets'
     end
   end
