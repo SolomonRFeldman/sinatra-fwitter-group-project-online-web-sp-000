@@ -6,6 +6,6 @@ class UsersController < ApplicationController
   
   post '/users' do
     User.create(params)
-    
+    session[:user_id]
     
 end
