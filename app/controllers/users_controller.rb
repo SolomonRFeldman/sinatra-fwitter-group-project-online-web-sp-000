@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
   
   post '/users' do
-    @user = User.create(params)
+    @user = User.create(params[:user])
     session[:user_id] = @user.id
     redirect "/tweets"
   end
