@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'capybara'
+require 'capybara/rspec'
 describe ApplicationController do
 
   describe "Homepage" do
