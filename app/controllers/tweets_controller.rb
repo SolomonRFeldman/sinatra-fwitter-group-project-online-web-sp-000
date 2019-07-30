@@ -39,7 +39,7 @@ class TweetsController < ApplicationController
   
   get '/tweets/:id/edit' do
     binding.pry
-    @tweet = Tweet.find(id: params[:id])
+    @tweet = Tweet.find(id: params[:id][:id])
     if @tweet.user.id == session[:user_id]
       erb :'/tweets/edit'
     else
