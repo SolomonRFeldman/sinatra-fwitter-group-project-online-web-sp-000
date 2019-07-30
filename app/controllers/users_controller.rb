@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   get '/signup' do
+    if is
     erb :"/users/signup"
   end
   
