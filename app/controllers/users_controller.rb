@@ -5,7 +5,9 @@ class UsersController < ApplicationController
   end
   
   post '/users' do
-    if params.any? { |param| params[param] == "" }
+    if params.any? { |param| 
+      binding.pry
+      params[param] == "" }
       redirect '/signup'
     end
     @user = User.create(params[:user])
