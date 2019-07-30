@@ -31,7 +31,7 @@ class TweetsController < ApplicationController
   get '/tweets/:id' do
     binding.pry
     if Helpers.is_logged_in?(session)
-      @tweet = Tweet.find(params)
+      @tweet = Tweet.find(params[:id])
       binding.pry
       erb :'/tweets/show'
     else
